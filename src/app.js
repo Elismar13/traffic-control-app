@@ -5,13 +5,15 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true, // Permite usar o Node.js na página web
+      // nodeIntegration: true, // Permite usar o Node.js na página web
       devTools: true,
     }
   })
 
-  
-  mainWindow.loadFile('src/index.html')
+  mainWindow.webContents.openDevTools();
+  //mainWindow.loadFile('src/index.html');
+  mainWindow.loadFile('src/pages/canvas/canvas.html');
+
 }
 
 app.whenReady().then(() => {
