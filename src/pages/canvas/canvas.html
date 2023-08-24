@@ -3,14 +3,24 @@
 <head>
   <title>Desenhar Pontos na Imagem</title>
   <link rel="stylesheet" href="canvas.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
   <div class="imageEditorContainer">
+    <div class="rewindContainer">
+      <button> <i class="material-icons">undo</i> </button>
+      <div>
+        <button onclick="save"> <i class="material-icons">save</i> </button>
+        <button> <i class="material-icons">home</i> </button>
+        <button onclick="import_as"> <i class="material-icons">folder_open</i> </button>
+      </div>
+      <button> <i class="material-icons">redo</i> </button>
+    </div>
     <input type="file" id="imageUpload" accept="image/*">
     <canvas id="canvas"></canvas>
     <script src="canvas.js"></script>
     <div>
-      <button type="submit" id="">exportar essa poha</button>
+      
     </div>
   </div>
 </body>
