@@ -12,7 +12,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1920px;
     margin: 0;
     background-color: var(--background-color);
@@ -26,7 +26,7 @@ h1, h2, h3 {
   color: var(--text-color);
 }
 
-p {
+p, label {
   color: var(--secondary-text-color);
 }
 
@@ -39,21 +39,60 @@ button {
   cursor: pointer;
 }
 
-.imageEditorContainer {
+canvas {
+  display: none;
+}
+
+input[type=file]::file-selector-button {
+  border: 2px solid #6c5ce7;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: #a29bfe;
+  transition: 1s;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #81ecec;
+  border: 2px solid #00cec9;
+}
+
+.image-editor-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;  
+  height: 100%;
 }
 
-.rewindContainer {
+.rewind-container {
   background-color: var(--border-color);
-  padding: 1rem 2.5rem;
+  padding: 32px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: max(32px, 2rem);
+  max-height: 4rem;
+}
+
+.custom-file-upload {
+  border: 1px solid var(--secondary-text-color);
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.image-upload-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
   height: 100%;
+}
+
+.canvas-container {
+  padding: 20px auto;
 }

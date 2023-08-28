@@ -1,6 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const imageUpload = document.getElementById('imageUpload');
+const canvasContainer = document.getElementById('canvas-container');
+const imageUpload = document.getElementById('image-upload');
+const undoButton = document.getElementById('undo-button');
+const redoButton = document.getElementById('redo-button');
 const MAX_POINTS = 4;
 
 let image;
@@ -14,6 +17,9 @@ let colors = ['#FF6633', '#FF33FF', '#FFFF99', '#00B3E6',
   '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933'
 ];
 let currentColor = colors[actualColor];
+
+let undoStack = [];
+let redoStack = [];
 
 function drawSinglePoint(point) {
   ctx.beginPath();
@@ -61,6 +67,8 @@ function openFile(event) {
       image.onload = () => {
         canvas.width = image.width;
         canvas.height = image.height;
+        canvas.style.display = 'inline';
+        //canvasContainer.style.display = 'none';
         ctx.drawImage(image, 0, 0);
       };
     };
@@ -82,7 +90,11 @@ function addPointListener(mouseEvent) {
     organizePoints();
     createPath();
     colorPointCount = 0;
+    currentColor++;
   }
+
+  // Clear redo stack when adding new points
+  redoStack = [];
 }
 
 function organizePoints() {
@@ -109,8 +121,29 @@ function calculateCenter(points) {
 
 function createPath() {
   paths.push({ color: currentColor, points: [...points] });
+  undoStack.push([...points]);
   points = [];
+}
+
+function undo() {
+  if (undoStack.length > 0) {
+    redoStack.push([...points]);
+    points = undoStack.pop();
+    paths.pop();
+    drawPoints();
+  }
+}
+
+function redo() {
+  if (redoStack.length > 0) {
+    undoStack.push([...points]);
+    points = redoStack.pop();
+    createPath();
+    drawPoints();
+  }
 }
 
 imageUpload.addEventListener('change', openFile);
 canvas.addEventListener('click', addPointListener);
+undoButton.addEventListener('click', undo);
+redoButton.addEventListener('click', redo);

@@ -6,22 +6,25 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-  <div class="imageEditorContainer">
-    <div class="rewindContainer">
-      <button> <i class="material-icons">undo</i> </button>
+  <div class="image-editor-container">
+    <div class="rewind-container">
+      <button id="undo-button"> <i class="material-icons">undo</i> </button>
       <div>
-        <button onclick="save"> <i class="material-icons">save</i> </button>
+        <button> <i class="material-icons">save</i> </button>
         <button> <i class="material-icons">home</i> </button>
-        <button onclick="import_as"> <i class="material-icons">folder_open</i> </button>
+        <button> <i class="material-icons">folder_open</i> </button>
       </div>
-      <button> <i class="material-icons">redo</i> </button>
+      <button id="redo-button"> <i class="material-icons">redo</i> </button>
     </div>
-    <input type="file" id="imageUpload" accept="image/*">
-    <canvas id="canvas"></canvas>
+    <div class="image-upload-container">
+      <label for="image-upload" class="custom-file-upload">
+        <input type="file" id="image-upload" accept="image/*">
+      </label>
+    </div>
+    <div class="canvas-container">
+      <canvas id="canvas"></canvas>
+    </div>
     <script src="canvas.js"></script>
-    <div>
-      
-    </div>
   </div>
 </body>
 </html>
