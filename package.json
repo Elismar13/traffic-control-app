@@ -20,8 +20,8 @@
     "@electron-forge/plugin-auto-unpack-natives": "^6.3.0",
     "electron": "^25.5.0"
   },
+  "@electron-internal/eslint-config": "^1.0.1",
   "dependencies": {
-    "@electron-internal/eslint-config": "^1.0.1",
     "electron-squirrel-startup": "^1.0.0",
     "eslint": "^8.48.0",
     "eslint-plugin-node": "^11.1.0"

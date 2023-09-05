@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
@@ -6,14 +6,12 @@ function createWindow () {
     height: 600,
     fullscreen: false,
     webPreferences: {
-      // nodeIntegration: true, // Permite usar o Node.js na página web
       devTools: true,
     }
   });
 
   mainWindow.webContents.openDevTools();
-  //mainWindow.loadFile('src/index.html');
-  mainWindow.loadFile('src/pages/canvas/canvas.html');
+  mainWindow.loadFile('src/pages/home/home.html');
 
 }
 
@@ -23,7 +21,11 @@ app.whenReady().then(() => {
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) 
       createWindow();
-  })
+  });
+
+  ipcMain.on('change-to-canvas', () => {
+    mainWindow.loadFile('src/pages/canvas/canvas.html');
+  });
 })
 
 app.on('window-all-closed', function () {

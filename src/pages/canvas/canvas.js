@@ -7,20 +7,20 @@ const redoButton = document.getElementById('redo-button');
 const saveButton = document.getElementById('save-button');
 const loadButton = document.getElementById('load-button');
 const MAX_POINTS = 4;
-
-let image;
 const paths = [];
-let points = [];
-let colorPointCount = 0;
-const actualColor = 0;
 const colors = ['#FF6633', '#FF33FF', '#FFFF99', '#00B3E6',
   '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
   '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
   '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933'
 ];
+
+let image;
+let points = [];
+let pointCount = 0;
+let actualColor = 0;
 let currentColor = colors[actualColor];
 
-const undoStack = [];
+let undoStack = [];
 let redoStack = [];
 
 function drawSinglePoint (point) {
@@ -82,17 +82,17 @@ function addPointListener (mouseEvent) {
   const x = mouseEvent.clientX - canvas.getBoundingClientRect().left;
   const y = mouseEvent.clientY - canvas.getBoundingClientRect().top;
 
-  colorPointCount++;
+  pointCount++;
   points.push({ x, y, color: currentColor });
   drawPoints();
 
   console.log(`Cord x: ${x}; Cord y: ${y}; Cor: ${currentColor}`);
 
-  if (colorPointCount === MAX_POINTS) {
+  if (pointCount === MAX_POINTS) {
     organizePoints();
     createPath();
-    colorPointCount = 0;
-    currentColor++;
+    pointCount = 0;
+    currentColor = colors[++actualColor];
   }
 
   // Clear redo stack when adding new points
@@ -197,7 +197,7 @@ function handleFileSelect (event) {
 
       drawPoints();
     } catch (error) {
-      alert('O arquivo selecionado não é válido JSON.');
+      alert('O arquivo selecionado não é um JSON válido.');
     }
   };
 

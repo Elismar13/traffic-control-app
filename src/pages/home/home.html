@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" width="device-width, initial-scale=1">
+	<title>TrafficManagement</title>
+
+	<link rel="stylesheet" type="text/css" href="home.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+
+	<section class="hero">
+		<header>
+			<div class="container">
+				<div class="logo">
+					<h2><a href="#"><span></span>TrafficManagement</a></h2>
+				</div>
+				<nav>
+					<div class="hamb">
+						<span class="line"></span>
+						<span class="line"></span>
+						<span class="line"></span>
+					</div>
+
+					<ul class="nav-links">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Sobre</a></li>
+						<li><a href="#">Cofigurações</a></li>
+						<li><a href="#">Editar</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section class="banner">
+			<div class="container">
+				<div class="details">
+					<h1>Otimização de fluxo contínuo de trânsito</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="cta">
+					<a href="#" id="startNow">Acessar agora</a>
+					<a href="#" id="knowMore">Saiba mais (em desenvolvimento)</a>
+				</div>				
+			</div>
+			<div class="connect">
+				<div class="container">					
+					<a href="" target="_blank"><i class="fab fa-dribbble"></i></a>
+					<a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="" target="_blank"><i class="fab fa-facebook"></i></a>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<script>
+		const hamburger = document.querySelector('.hamb');
+		const navLinks = document.querySelector('.nav-links');
+		const links = document.querySelectorAll('.nav-links li');
+
+		hamburger.addEventListener('click', function() {
+			navLinks.classList.toggle('open');
+		});
+
+		document.getElementById('startNow').addEventListener('click', (event) => {
+			console.log("UEBA")
+			event.preventDefault();
+			// window.location.href = ;
+			window.location.replace('../canvas/canvas.html');
+		});
+	</script>
+
+</body>
+</html>
