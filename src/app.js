@@ -11,7 +11,8 @@ function createWindow () {
   });
 
   mainWindow.webContents.openDevTools();
-  mainWindow.loadFile('src/pages/home/home.html');
+  // mainWindow.loadFile('src/pages/home/home.html');
+  mainWindow.loadFile('src/pages/settings/settings.html');
 
 }
 

@@ -146,6 +146,11 @@ function redo () {
 }
 
 function savePoints () {
+  if(paths != null && paths.length == 0) {
+    alert('Nenhuma alteração para salvar. Carregue a imagem e edite os pontos primeiro.');
+    return;
+  }
+
   const dataToSave = JSON.stringify(paths);
 
   const blob = new Blob([dataToSave], { type: 'application/json' });

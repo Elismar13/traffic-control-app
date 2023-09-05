@@ -23,7 +23,7 @@ h1 {
 
 /* Ends basic desing */
 
-.container {
+.headerContainer {
 	width: 1280px;
 	max-width: 100%;
 	padding: 0px 3%;
@@ -42,25 +42,25 @@ h1 {
 	position: relative;
 }
 
-.hero header {
+header {
 	padding: 30px 0px;
 }
 
-.hero header .container {
+header .headerContainer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.hero header .logo h2 a {
+header .logo h2 a {
 	text-decoration: none;
 	font-size: 28px;
 	font-weight: bold;
 	color: #e4e4e4;
 }
 
-.hero header .logo h2 span {
+header .logo h2 span {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
@@ -70,15 +70,15 @@ h1 {
 	vertical-align: middle;
 }
 
-.hero header nav ul {
+header nav ul {
 	list-style: none;
 }
 
-.hero header nav ul li {
+header nav ul li {
 	display: inline-block;
 }
 
-.hero header nav ul li a {
+header nav ul li a {
 	display: inline-block;
 	text-decoration: none;
 	color: #e4e4e4;
@@ -92,20 +92,20 @@ h1 {
 	transition: .3s color;
 }
 
-.hero header nav ul li a:hover {
+header nav ul li a:hover {
 	color: #947efd;
 }
 
-.hero header nav ul li.active a {
+header nav ul li.active a {
 	color: #7357FA;
 	border: 2px solid #7357FA;
 }
 
-.hero .banner {
+.banner {
 	margin-top: 250px;
 }
 
-.hero .banner .container {	
+.banner .headerContainer {	
 	padding: 0px 7%;
 }
 
@@ -150,11 +150,11 @@ h1 {
 	margin-top: 200px;
 }
 
-.hero .connect .container {
+.hero .connect .headerContainer {
 	padding: 0px 3%;
 }
 
-.hero .connect .container a {
+.hero .connect .headerContainer a {
 	display: inline-block;
 	font-size: 18px;
 	color: #AFB2B2;
@@ -162,24 +162,24 @@ h1 {
 	transition: .3s color;
 }
 
-.hero .connect .container a:hover,
-.hero .connect .container a:focus {
+.hero .connect .headerContainer a:hover,
+.hero .connect .headerContainer a:focus {
 	color: #6F6F6F;
 }
 
-.hero .connect .container a:nth-child(1):hover {
+.hero .connect .headerContainer a:nth-child(1):hover {
 	color: #DF427E;
 }
 
-.hero .connect .container a:nth-child(2):hover {
+.hero .connect .headerContainer a:nth-child(2):hover {
 	color: #813FB2;
 }
 
-.hero .connect .container a:nth-child(3):hover {
+.hero .connect .headerContainer a:nth-child(3):hover {
 	color: #5BAFE8;
 }
 
-.hero .connect .container a:nth-child(4):hover {
+.hero .connect .headerContainer a:nth-child(4):hover {
 	color: #187CEE;
 }
 
