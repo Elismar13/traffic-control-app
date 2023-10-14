@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Upload de Vídeo</title>
-  <link rel="stylesheet" href="../home/home.css">
-  <link rel="stylesheet" href="settings.css">
-</head>
-<body>
-  <section class="">
-    <header>
-      <div class="headerContainer">
-        <div class="logo">
-          <h2><a href="#"><span></span>TrafficManagement</a></h2>
-        </div>
-        <nav>
-          <div class="hamb">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-          </div>
 
-          <ul class="nav-links">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Cofigurações</a></li>
-            <li><a href="#">Editar</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- <p>Upload de Vídeo</p>
+<head>
+    <title>Upload de Vídeo</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <section class="container">
+        <header>
+            <div class="headerContainer">
+                <div class="logo">
+                    <h2><a href="#"><span></span>TrafficManagement</a></h2>
+                </div>
+                <nav>
+                    <div class="hamb">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li class="active"><a href="#">Cofigurações</a></li>
+                        <li><a href="#">Editar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- <p>Upload de Vídeo</p>
     <form id="uploadForm" enctype="multipart/form-data">
       <label for="videoFile" class="custom-file-upload">
         <input type="file" id="videoFile" name="videoFile">
@@ -36,13 +38,24 @@
       </label>
       <button type="submit">Upload</button>
     </form> -->
-    <div class="image-upload-container">
-      <label for="image-upload" class="custom-file-upload">
-        <input type="file" id="image-upload" accept="image/*">
-      </label>
-    </div>
-  </section>
-  
-  <script src="upload.js"></script>
+        <div class="image-upload-container">
+            <form id="uploadForm">
+                <p>Selecione a pasta raiz do repositorio "car_detection"</p>
+                <label for="image-upload" class="custom-file-upload">
+                    <input id="folderInput" type="file" webkitdirectory="true" required>
+                </label>
+                <p>Selecione o vídeo</p>
+                <label for="image-upload" class="custom-file-upload">
+                    <input id="folderInput" type="file" accept="video/*" required>
+                </label>
+                <button type="submit">Salvar e rodar script</button>
+
+                <!-- Botão de parar  -->
+            </form>
+        </div>
+    </section>
+
+    <script src="settings.js"></script>
 </body>
+
 </html>
